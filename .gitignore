@@ -24,6 +24,11 @@ Servers
 .project
 build
 .classpath
+.springBeans
 
 # Maven Build Directory
 */target/**
+
+# Eclipse Plugins
+RemoteSystemsTempFiles
+

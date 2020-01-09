@@ -6,16 +6,15 @@ import javax.sql.DataSource;
 
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.junit.jupiter.api.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import lombok.Setter;
 import lombok.extern.log4j.Log4j;
 
-// @ExtendWith(SpringExtension.class)
-@RunWith(SpringJUnit4ClassRunner.class)
+@ExtendWith(SpringExtension.class)
 @ContextConfiguration("file:src/main/webapp/WEB-INF/spring/root-context.xml")
 @Log4j
 public class DataSourceTests {
@@ -28,20 +27,21 @@ public class DataSourceTests {
 	private SqlSessionFactory sqlSessionFactory;
 	*/
 	
-	@Setter(onMethod_ = { @Autowired })
+	//@Setter(onMethod_ = { @Autowired })
+	@Autowired
 	private DataSource dataSource;
 	
-	@Setter(onMethod_ = { @Autowired })
+	// @Setter(onMethod_ = { @Autowired })
+	@Autowired
 	private SqlSessionFactory sqlSessionFactory;
-	
 	
 	@Test
 	public void testConnection() {
-		// TODO:: 테스트 하기
-		log.info("1");
+		//GenericXmlApplicationContext ctx = new GenericXmlApplicationContext("classpath:root-context.xml");
+		//DataSource ds = (DataSource) ctx.getBean("dataSource", DataSource.class);
 		
-		try (Connection conn = dataSource.getConnection()){
-			log.info("22");
+		try (Connection conn = dataSource.getConnection()) {
+		// try (Connection conn = ds.getConnection()) {		
 			log.info("conn: " + conn);
 			
 			
