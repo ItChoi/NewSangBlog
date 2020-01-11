@@ -5,7 +5,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class ImageRepository extends SuperDomain {
+public class ImageRepository extends CommonDomain {
 	private long id;
 	private long userId;
 	private String imageType;

@@ -7,6 +7,8 @@ import lombok.Setter;
 @Setter
 public class PhoneNumbers {
 	private String[] phoneNumber;
+	
+	public static final String[] phonNumbers = {"010", "011", "016", "017", "019"};
 
 	public PhoneNumbers() {
 		

@@ -2,14 +2,14 @@ package com.blog.sang.common.portfolio.domain;
 
 import java.util.List;
 
-import com.blog.sang.common.domain.SuperDomain;
+import com.blog.sang.common.domain.CommonDomain;
 
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
-public class Portfolio extends SuperDomain {
+public class Portfolio extends CommonDomain {
 	private long id;
 	private long userId;
 	private String imageName;

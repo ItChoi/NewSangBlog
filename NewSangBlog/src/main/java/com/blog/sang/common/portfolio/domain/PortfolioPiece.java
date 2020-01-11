@@ -3,14 +3,14 @@ package com.blog.sang.common.portfolio.domain;
 import java.util.List;
 
 import com.blog.sang.common.domain.ImageRepository;
-import com.blog.sang.common.domain.SuperDomain;
+import com.blog.sang.common.domain.CommonDomain;
 
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
-public class PortfolioPiece extends SuperDomain {
+public class PortfolioPiece extends CommonDomain {
 	private long id;
 	private long portfolioId;
 	private String title;

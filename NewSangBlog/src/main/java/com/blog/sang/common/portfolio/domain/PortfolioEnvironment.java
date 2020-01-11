@@ -1,13 +1,13 @@
 package com.blog.sang.common.portfolio.domain;
 
-import com.blog.sang.common.domain.SuperDomain;
+import com.blog.sang.common.domain.CommonDomain;
 
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
-public class PortfolioEnvironment extends SuperDomain{
+public class PortfolioEnvironment extends CommonDomain{
 	private long id;
 	private long userId;
 	private String type;
