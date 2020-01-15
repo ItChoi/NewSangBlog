@@ -1,6 +1,7 @@
 package com.blog.sang.common.enumeration;
 
-import com.blog.sang.common.domain.support.PhoneNumbers;
+
+import com.blog.sang.common.support.PhoneNumbers;
 
 import lombok.Getter;
 

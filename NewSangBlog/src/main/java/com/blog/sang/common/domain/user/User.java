@@ -1,7 +1,7 @@
-package com.blog.sang.common.user.domain;
+package com.blog.sang.common.domain.user;
 
 import com.blog.sang.common.domain.CommonDomain;
-import com.blog.sang.common.domain.support.PhoneNumbers;
+import com.blog.sang.common.support.PhoneNumbers;
 
 import lombok.Getter;
 import lombok.Setter;

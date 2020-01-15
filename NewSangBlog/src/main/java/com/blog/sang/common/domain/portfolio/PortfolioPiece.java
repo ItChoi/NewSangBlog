@@ -1,9 +1,9 @@
-package com.blog.sang.common.portfolio.domain;
+package com.blog.sang.common.domain.portfolio;
 
 import java.util.List;
 
-import com.blog.sang.common.domain.ImageRepository;
 import com.blog.sang.common.domain.CommonDomain;
+import com.blog.sang.common.domain.image.ImageRepository;
 
 import lombok.Getter;
 import lombok.Setter;

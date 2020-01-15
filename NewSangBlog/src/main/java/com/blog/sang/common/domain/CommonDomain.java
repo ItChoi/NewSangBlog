@@ -12,8 +12,9 @@ public class CommonDomain {
 	private String updatedLoginId;
 	
 	public CommonDomain() {
-		
+		this(null, null, null, null);
 	}
+	
 	
 	public CommonDomain(String createdDate, String updatedDate, String createdLoginId, String updatedLoginId) {
 		this.createdDate = createdDate;
@@ -21,6 +22,8 @@ public class CommonDomain {
 		this.createdLoginId = createdLoginId;
 		this.updatedLoginId = updatedLoginId;
 	}
+
+
 	
 	
 }

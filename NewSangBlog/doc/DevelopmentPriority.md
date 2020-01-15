@@ -14,6 +14,9 @@
 - Enum으로 폰 / 전화 앞자리 효율적으로 사용하기.
 - log4j2 설정 알아보기.
 - UML - 클래스 다이어그램 작성 중....
+- 람다, Optional, (Arrays, Collectors), Exception 정리
 
 
+### 진행 중인 작업
+- DateUtil 만들기.
 

@@ -1,4 +1,6 @@
-package com.blog.sang.common.domain;
+package com.blog.sang.common.domain.image;
+
+import com.blog.sang.common.domain.CommonDomain;
 
 import lombok.Getter;
 import lombok.Setter;

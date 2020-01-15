@@ -1,4 +1,4 @@
-package com.blog.sang.common.domain.support;
+package com.blog.sang.common.support;
 
 import lombok.Getter;
 import lombok.Setter;

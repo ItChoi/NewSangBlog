@@ -1,4 +1,4 @@
-package com.blog.sang.common.portfolio.domain;
+package com.blog.sang.common.domain.portfolio;
 
 import com.blog.sang.common.domain.CommonDomain;
 

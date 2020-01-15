@@ -4,9 +4,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
-import com.blog.sang.common.domain.support.PhoneNumbers;
+import com.blog.sang.common.domain.user.User;
 import com.blog.sang.common.enumeration.FirstContactNumbers;
-import com.blog.sang.common.user.domain.User;
+import com.blog.sang.common.support.PhoneNumbers;
 
 
 public class ArrayUseTests {
@@ -29,5 +29,4 @@ public class ArrayUseTests {
 			System.out.println("test: " + test);
 		}
 	}
-	
 }
