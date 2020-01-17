@@ -4,10 +4,13 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import org.junit.jupiter.api.Test;
 
-import com.blog.sang.common.enumeration.Pattern;
+import com.blog.sang.common.enumeration.DateTimePattern;
+import com.blog.sang.common.enumeration.RegularExpressionType;
 import com.blog.sang.common.utils.date.DateTimeUtils;
 
 public class DateTest {
@@ -67,9 +70,10 @@ public class DateTest {
 
 	@Test
 	public void Enum_적용_테스트() {
-		String dateTime1 = DateTimeUtils.nowDateTime(Pattern.DATE_TIME.getFormatPattern());
-		String dateTime2 = DateTimeUtils.nowDateTime(Pattern.DATE_TIME.getOriginalPattern());
+		String dateTime1 = DateTimeUtils.nowDateTime(DateTimePattern.DATE_TIME.getFormatPattern());
+		String dateTime2 = DateTimeUtils.nowDateTime(DateTimePattern.DATE_TIME.getOriginalPattern());
 		
+		System.out.println("dateType1zz: " + dateTime1.replaceAll("-", "").replaceAll(" ", "").replaceAll(":", ""));
 		System.out.println("dateType1: " + dateTime1);
 		System.out.println("dateType1-1: " + dateTime1.length());
 		System.out.println("dateType2: " + dateTime2);
@@ -88,6 +92,25 @@ public class DateTest {
 				DateTimeFormatter.ofPattern("asdadasd")).length());
 		System.out.println("test2: " + LocalDateTime.now().format(
 				DateTimeFormatter.ofPattern("asdadasd")));
+	}
+	
+	@Test
+	public void 테스트트트() {
+		// 
+		Pattern.matches(regex, input);
+		String a = "asdasd";
+		
+		Pattern pattern = Pattern.compile("^[^0-9]$");
+		
+		Matcher matcher = pattern.matcher(a);
+		
+		while (matcher.find()) {
+			System.out.println("test: " + matcher.group());
+		}
+		
+		boolean test2 = pattern.matches("^[^0-9]$", a);
+		System.out.println("test2: " + test2);
+				
 	}
 	
 }

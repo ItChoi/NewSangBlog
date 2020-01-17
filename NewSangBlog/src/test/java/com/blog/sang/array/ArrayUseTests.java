@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 
 import com.blog.sang.common.domain.user.User;
-import com.blog.sang.common.enumeration.FirstContactNumbers;
+import com.blog.sang.common.enumeration.ContactInfoType;
 import com.blog.sang.common.support.PhoneNumbers;
 
 
@@ -25,7 +25,7 @@ public class ArrayUseTests {
 	
 	@Test
 	public void 이넘_배열_사용() {
-		for (String test : FirstContactNumbers.PHONE_NUMBER.getPhoneNumbers()) {
+		for (String test : ContactInfoType.FIRST_PHONE_NUMBERS.getValues()) {
 			System.out.println("test: " + test);
 		}
 	}

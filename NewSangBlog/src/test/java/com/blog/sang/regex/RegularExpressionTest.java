@@ -1,9 +1,9 @@
 package com.blog.sang.regex;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 import org.junit.jupiter.api.Test;
+
+import com.blog.sang.common.enumeration.DateTimePattern;
+import com.blog.sang.common.utils.date.DateTimeUtils;
 
 public class RegularExpressionTest {
 	
@@ -32,7 +32,10 @@ public class RegularExpressionTest {
 		 * 
 		 */
 
-		String result = "2020-01-15 14:53:22";
+		String result1 = "2020-01-15 14:53:22";
+		String result2 = "20200115083551";
+		String result3 = "aaaaaaaaaaaaaa";
+		
 		
 		// 숫자4-숫자2-숫자2 숫자2:숫자2:숫자2
 		String dateDelimiter = "-";
@@ -40,12 +43,14 @@ public class RegularExpressionTest {
 		String regEx1 = "^\\d{4}" + dateDelimiter + "\\d{2}" + dateDelimiter + "\\d{2}"
 						+ " " + "\\d{2}" + timeDelimiter + "\\d{2}" + timeDelimiter + "\\d{2}$";
 		// 온리 숫자 length 14
-		String regEx2 = "^[0-9]{14}$";
+		String regEx2 = "^[^0-9]{14}$";
 		
-		String val = "20200115083551";
 		// System.out.println("test1: " + val.matches(regEx2));
-		System.out.println("test2: " + result.matches(regEx1));
+		// System.out.println("test2: " + result3.matches(regEx2));
+		String testValue = DateTimeUtils.nowDateTime(DateTimePattern.DATE_TIME.getFormatPattern());
+		System.out.println("testValue: " + testValue);
 		
+		// System.out.println("test3: " + DelimiterConverter.convertWhiteSpaceBy("", ""));
 		/**
 		Pattern pattern = Pattern.compile(regEx2);
 		Matcher matcher = pattern.matcher("202001152123131");
