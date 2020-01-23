@@ -4,6 +4,9 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -70,14 +73,15 @@ public class DateTest {
 
 	@Test
 	public void Enum_적용_테스트() {
-		String dateTime1 = DateTimeUtils.nowDateTime(DateTimePattern.DATE_TIME.getFormatPattern());
-		String dateTime2 = DateTimeUtils.nowDateTime(DateTimePattern.DATE_TIME.getOriginalPattern());
+		// String dateTime1 = DateTimeUtils.nowDateTime("yyyyMMddHHmmss");
+		// String dateTime1 = DateTimeUtils.nowDateTime(DateTimePattern.DATE_TIME.getOriginalPattern());
+		String dateTime1 = DateTimeUtils.nowDateTime("yyyy-MM-dd HH:mm:ss");
 		
-		System.out.println("dateType1zz: " + dateTime1.replaceAll("-", "").replaceAll(" ", "").replaceAll(":", ""));
+		// System.out.println("dateType1zz: " + dateTime1.replaceAll("-", "").replaceAll(" ", "").replaceAll(":", ""));
 		System.out.println("dateType1: " + dateTime1);
 		System.out.println("dateType1-1: " + dateTime1.length());
-		System.out.println("dateType2: " + dateTime2);
-		System.out.println("dateType2-2: " + dateTime2.length());
+		//System.out.println("dateType2: " + dateTime2);
+		//System.out.println("dateType2-2: " + dateTime2.length());
 		
 		
 		System.out.println("dateType3: " + LocalDateTime.now().format(
@@ -97,20 +101,58 @@ public class DateTest {
 	@Test
 	public void 테스트트트() {
 		// 
-		Pattern.matches(regex, input);
-		String a = "asdasd";
+		//Pattern.matches(regex, input);
+		String a = "5231ㅇ23123123aaㅁ";
+		String[] b = {};
 		
-		Pattern pattern = Pattern.compile("^[^0-9]$");
-		
+		// Pattern pattern = Pattern.compile("("+RegularExpressionType.NUMBER.getDisuse()+")("+ RegularExpressionType.NUMBER.getUse() +")");
+		Pattern pattern = Pattern.compile("[^0-9]");
 		Matcher matcher = pattern.matcher(a);
 		
+		int i = 0;
 		while (matcher.find()) {
-			System.out.println("test: " + matcher.group());
+			b[i] = matcher.group();
 		}
 		
-		boolean test2 = pattern.matches("^[^0-9]$", a);
+		System.out.println("a: " + a);
+		
+		boolean test2 = Pattern.matches("^[0-9]$", a);
 		System.out.println("test2: " + test2);
 				
+	}
+	
+	@Test
+	public void 구분자_제거_테스트() {
+		String dateTime = "2010-04-29 13:23:00";
+		
+		Pattern pattern = Pattern.compile("[^0-9]");
+		Matcher matcher = pattern.matcher(dateTime);
+		
+		
+		Set<String> set = new HashSet<>();
+		
+		while (matcher.find()) {
+			set.add(matcher.group());
+		}
+		
+		
+		Iterator<String> iterator = set.iterator();
+		
+		String delimiters = "";
+		
+		while (iterator.hasNext()) {
+			delimiters += iterator.next() + ",";
+		}
+		
+		System.out.println("test : " + delimiters);
+		
+		String[] result = delimiters.split(",");
+		
+		for (String asd : result) {
+			System.out.println("Result: " + asd);
+		}
+		
+		
 	}
 	
 }

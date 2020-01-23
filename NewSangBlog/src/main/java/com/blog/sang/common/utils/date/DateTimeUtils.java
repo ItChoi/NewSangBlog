@@ -30,12 +30,7 @@ public class DateTimeUtils {
 		String nowDateTime = LocalDateTime.now().format(
 				DateTimeFormatter.ofPattern(pattern));
 
-		// nowDateTime에서 구분자 찾기, 빈 공간 제거 값 넘기기 TODO:: 정규식 패턴 정하기~
-		if (!DateTimeValidator.validDateTimePattern(nowDateTime)) {
-			throw new InvalidDateTimeException("invalid DateTime pattern.");
-		}
-		
-		return nowDateTime;
+		return DateTimeValidator.validDateTimePattern(nowDateTime);
 	}
 	
 	public static final String nowDateTime(String dateDelimiter, String timeDelimiter) {

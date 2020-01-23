@@ -32,3 +32,5 @@ build
 # Eclipse Plugins
 RemoteSystemsTempFiles
 
+.ssh
+
