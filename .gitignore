@@ -34,3 +34,6 @@ RemoteSystemsTempFiles
 
 .ssh
 
+# sql ddl 
+mappers/*/*.sql
+*.sql

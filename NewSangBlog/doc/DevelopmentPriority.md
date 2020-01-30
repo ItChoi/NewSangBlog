@@ -15,9 +15,9 @@
 - log4j2 설정 알아보기.
 - UML - 클래스 다이어그램 작성 중....
 - 람다, Optional, (Arrays, Collectors), Exception 정리
+- 부트스트랩 적용 
 
 
-### 진행 중인 작업
 - DateUtil 만들기.
   - dateTime / date / time의 값이 올바로 들어갔는지 검증
     - 값과 구분자들 넘겨주어 확인
