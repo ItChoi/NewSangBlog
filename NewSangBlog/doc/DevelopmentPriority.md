@@ -9,8 +9,41 @@
 3. 패키지 환경 및 Mybatis 사용 환경 구축
 
 
+### 현재 작업 중
 
-### TODO
+- 메뉴 쿼리 작성
+    - 메뉴 쿼리 1, 2, 3차 한 번에 가져오기
+    - ID, PARENT_ID 활용하여 쿼리 작성
+    - 
+
+```sql
+SELECT
+    B.ID,
+    B.PARENT_ID,
+    B.MENU_LEVEL,
+    B.MENU_CODE,
+    B.ORDERING
+FROM
+    MANAGER_MENU B
+WHERE 
+    (CASE WHEN B.PARENT_ID IS NULL
+        THEN
+            B.ID
+        ELSE
+            B.PARENT_ID
+    END) IN (
+        SELECT 
+            A.ID
+        FROM
+            MANAGER_MENU A
+        WHERE
+            A.PARENT_ID IS NULL
+    )
+ORDER BY B.MENU_CODE, B.MENU_LEVEL
+    
+```
+
+### TODO LIST
 - Enum으로 폰 / 전화 앞자리 효율적으로 사용하기.
 - log4j2 설정 알아보기.
 - UML - 클래스 다이어그램 작성 중....
